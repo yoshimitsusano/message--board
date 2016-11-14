@@ -5,14 +5,15 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message=Message.new(mesaage_params)
+    @message = Message.new(message_params)
     @message.save
-    redirect_to root_path , notice: "メッセージを保存しました"
+    redirect_to root_path , notice: 'メッセージを保存しました'
   end
 
   private
-
   def message_params
     params.require(:message).permit(:name, :body)
   end
+  ## ここまで
 end
+
